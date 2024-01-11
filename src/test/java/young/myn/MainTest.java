@@ -2,8 +2,8 @@ package young.myn;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
+
 public class MainTest {
     @Test
     public void lengthTest(){
@@ -103,5 +103,28 @@ public class MainTest {
         assertEquals(PasswordValidator.validatePassword("#007skyfall2010#"),PasswordStatus.STRONG);
     }
 
+    @Test
+    public void passIsNullTest(){
+        try{
+            PasswordValidator.validatePassword(null);
+            fail();
+        }
+        catch (IllegalArgumentException e){
+            assertEquals("Password can't be null", e.getMessage());
+        }
+    }
+
+    @Test
+    public void passFromDangerousListIsWeak(){
+        assertEquals(PasswordValidator.validatePassword("tpepsucolia@1209"), PasswordStatus.WEAK);
+        assertEquals(PasswordValidator.validatePassword("V6#WnsBLDES2!7Zg"), PasswordStatus.WEAK);
+        assertEquals(PasswordValidator.validatePassword("ZAQ!2wsx"), PasswordStatus.WEAK);
+        assertEquals(PasswordValidator.validatePassword("********"), PasswordStatus.WEAK);
+
+        assertNotEquals(PasswordValidator.validatePassword("tpepsudsfcolia@1209"), PasswordStatus.WEAK);
+        assertNotEquals(PasswordValidator.validatePassword("V6#WnsBLdDES2!754Zg"), PasswordStatus.WEAK);
+        assertNotEquals(PasswordValidator.validatePassword("ZAQ!2as3wsx"), PasswordStatus.WEAK);
+        assertNotEquals(PasswordValidator.validatePassword("**a**6**b"), PasswordStatus.WEAK);
+    }
 
 }
