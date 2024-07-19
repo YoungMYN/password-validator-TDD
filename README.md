@@ -1,5 +1,5 @@
-[![en](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/YoungMYN/password-validator-TDD/blob/master/README.md)
-[![ru](https://img.shields.io/badge/lang-ru-blue.svg)](https://github.com/YoungMYN/password-validator-TDD/blob/master/README.ru.md)
+[![en](https://img.shields.io/badge/lang-en-green.svg)](README.md)
+[![ru](https://img.shields.io/badge/lang-ru-blue.svg)](README.ru.md)
 
 This project is a proprietary implementation of a user password validation algorithm.   
 The main goal was not so much writing code as the desire to demonstrate in action one of the classic practices of extreme programming – test driven development.

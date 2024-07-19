@@ -1,4 +1,4 @@
-[![en](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/YoungMYN/password-validator-TDD/blob/master/README.md)
+[![en](https://img.shields.io/badge/lang-en-green.svg)](README.md)
 
 Данный проект – собственная реализация алгоритма валидации пользовательского пароля.
 Главной целью было не столько написание кода, сколько желание продемонстрировать в действии одну из классических практик экстремального программирования – разработку через тестирование.
